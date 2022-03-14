@@ -188,6 +188,7 @@ public class Adventure {
     System.out.println("Exit game [exit]");
     System.out.print("\nEnter decision: ");
     String decision = in.nextLine();
+    decision = decision.toLowerCase();
 
     switch (decision) {
       case "start":
@@ -203,6 +204,7 @@ public class Adventure {
   void playerName() {
     System.out.print("Warrior! Whats your name: ");
     playerName = in.nextLine();
+    playerName = playerName.toUpperCase();
   }
 
   void help() {
@@ -225,6 +227,7 @@ public class Adventure {
         Exit Game [exit]""");
     System.out.print("\nEnter decision:");
     String helpMenuDecision = in.nextLine();
+    helpMenuDecision = helpMenuDecision.toLowerCase();
     switch (helpMenuDecision) {
       case "game" -> userInterface();
       case "main" -> mainMenu();
@@ -237,9 +240,10 @@ public class Adventure {
 
     System.out.print("\n" + playerName + ", what do you want to do: ");
     String playerDecision = in.nextLine();
+    playerDecision = playerDecision.toLowerCase();
     switch (playerDecision) {
-      case "look" -> System.out.println("\n" + currentRoom);
-      case "go north" -> {
+      case "look", "l" -> System.out.println("\n" + currentRoom);
+      case "go north", "north", "go n", "n" -> {
         if (currentRoom.getNorth() != null) {
           System.out.println(newLoc);
           currentRoom = currentRoom.getNorth();
@@ -247,7 +251,7 @@ public class Adventure {
           System.out.println("You can't go that way");
         }
       }
-      case "go south" -> {
+      case "go south", "south", "go s", "s" -> {
         if (currentRoom.getSouth() != null) {
           System.out.println(newLoc);
           currentRoom = currentRoom.getSouth();
@@ -255,7 +259,7 @@ public class Adventure {
           System.out.println("You can't go that way");
         }
       }
-      case "go west" -> {
+      case "go west", "west", "go w", "w" -> {
         if (currentRoom.getWest() != null) {
           System.out.println(newLoc);
           currentRoom = currentRoom.getWest();
@@ -263,7 +267,7 @@ public class Adventure {
           System.out.println("You can't go that way");
         }
       }
-      case "go east" -> {
+      case "go east", "east", "go e", "e" -> {
         if (currentRoom.getEast() != null) {
           System.out.println(newLoc);
           currentRoom = currentRoom.getEast();
