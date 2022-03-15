@@ -20,6 +20,14 @@ public class Room {
     return roomName;
   }
 
+  void setRoomDescription(String roomDescription) {
+    this.roomDescription = roomDescription;
+  }
+
+  String getRoomDescription() {
+    return roomDescription;
+  }
+
   void setNorth(Room north) {
     this.north = north;
   }
@@ -50,14 +58,6 @@ public class Room {
 
   Room getWest() {
     return west;
-  }
-
-  void setRoomDescription(String roomDescription) {
-    this.roomDescription = roomDescription;
-  }
-
-  String getRoomDescription() {
-    return roomDescription;
   }
 
   @Override
